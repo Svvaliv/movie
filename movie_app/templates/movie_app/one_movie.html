@@ -1,0 +1,22 @@
+{% extends "movie_app/base.html" %}
+
+{% block title %} Информация о фильме {% endblock %}
+
+{% block content %}
+    <h2>Информация о фильме  - {{ movie.name }}</h2>
+    <h3>Рейтинг - {{ movie.rating }}</h3>
+    <h3>Бюджет - {{ movie.budget }}</h3>
+    <h3>Год выхода - {{ movie.year|default:"Неизвестен" }}</h3>
+    <hr>
+    <h2>Режиссер</h2>
+    <h3>{{ movie.director.first_name }} {{ movie.director.last_name }}</h3>
+    <h3>Электронная почта: {{ movie.director.director_email }}</h3>
+    <hr>
+    <h2>Список актеров</h2>
+    <ul>
+    {% for actor in movie.actors.all %}
+    <li>{{ actor }}</li>
+    {% endfor %}
+
+    </ul>
+{% endblock %}

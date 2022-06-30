@@ -1,0 +1,4 @@
+.idea
+__pycache__
+movie/__pycache__
+movie_app/__pycache__
